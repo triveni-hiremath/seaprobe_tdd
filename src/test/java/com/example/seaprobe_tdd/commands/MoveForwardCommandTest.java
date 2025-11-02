@@ -1,17 +1,12 @@
 package com.example.seaprobe_tdd.commands;
 
-import com.example.seaprobe_tdd.dto.Coordinate;
-import com.example.seaprobe_tdd.dto.Grid;
 import com.example.seaprobe_tdd.dto.Probe;
 import com.example.seaprobe_tdd.dto.ProbeRequest;
 import com.example.seaprobe_tdd.enums.CommandEnum;
-import com.example.seaprobe_tdd.enums.DirectionEnum;
 import com.example.seaprobe_tdd.utils.Utils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -23,7 +18,7 @@ class MoveForwardCommandTest {
 
     @Test
     void command() {
-        assertEquals(CommandEnum.MOVE_FORWARD, command.command());
+        assertEquals(CommandEnum.MOVE_FORWARD, command.commandEnum());
     }
 
     @Test

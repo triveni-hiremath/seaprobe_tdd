@@ -17,7 +17,7 @@ class TurnRightCommandTest {
 
     @Test
     void command() {
-        assertEquals(CommandEnum.TURN_RIGHT, turnRightCommand.command());
+        assertEquals(CommandEnum.TURN_RIGHT, turnRightCommand.commandEnum());
     }
 
     @Test

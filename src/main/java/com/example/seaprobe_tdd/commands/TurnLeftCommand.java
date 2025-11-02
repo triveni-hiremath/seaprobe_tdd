@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class TurnLeftCommand implements ICommand {
     @Override
-    public CommandEnum command() {
+    public CommandEnum commandEnum() {
         return CommandEnum.TURN_LEFT;
     }
 

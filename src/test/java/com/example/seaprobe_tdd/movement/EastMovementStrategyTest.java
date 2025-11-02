@@ -16,13 +16,13 @@ class EastMovementStrategyTest {
 
     @Test
     void direction() {
-        assertEquals(DirectionEnum.E, eastMovementStrategy.direction());
+        assertEquals(DirectionEnum.E, eastMovementStrategy.directionEnum());
     }
 
     @Test
     void moveForward() {
         Coordinate inputCoordinate = new Coordinate(1,5);
-        Coordinate output = eastMovementStrategy.moveForward(inputCoordinate);
+        Coordinate output = eastMovementStrategy.getForwardCoordinate(inputCoordinate);
         assertEquals(inputCoordinate.x()+1, output.x());
         assertEquals(inputCoordinate.y(), output.y());
     }
@@ -30,7 +30,7 @@ class EastMovementStrategyTest {
     @Test
     void moveBackward() {
         Coordinate inputCoordinate = new Coordinate(1,5);
-        Coordinate output = eastMovementStrategy.moveBackward(inputCoordinate);
+        Coordinate output = eastMovementStrategy.getBackwardCoordinate(inputCoordinate);
         assertEquals(inputCoordinate.x()-1, output.x());
         assertEquals(inputCoordinate.y(), output.y());
     }

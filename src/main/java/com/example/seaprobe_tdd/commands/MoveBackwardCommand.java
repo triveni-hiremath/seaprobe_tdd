@@ -5,8 +5,8 @@ import com.example.seaprobe_tdd.dto.Coordinate;
 import com.example.seaprobe_tdd.dto.Probe;
 import com.example.seaprobe_tdd.dto.ProbeRequest;
 import com.example.seaprobe_tdd.enums.CommandEnum;
-import com.example.seaprobe_tdd.movement.IMovementStrategy;
-import com.example.seaprobe_tdd.movement.MovementStrategyFactory;
+import com.example.seaprobe_tdd.movement.IDirectionalMovementStrategy;
+import com.example.seaprobe_tdd.movement.DirectionalMovementStrategyFactory;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -14,18 +14,18 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 public class MoveBackwardCommand implements ICommand {
 
-    private MovementStrategyFactory factory;
+    private DirectionalMovementStrategyFactory factory;
 
     @Override
-    public CommandEnum command() {
+    public CommandEnum commandEnum() {
         return CommandEnum.MOVE_BACKWARD;
     }
 
     @Override
     public void execute(ProbeRequest probeEnvironment) {
         Probe probe = probeEnvironment.getProbe();
-        IMovementStrategy strategy = factory.getMovementStrategy(probe.getCurrentDirection());
-        Coordinate coordinate = strategy.moveBackward(probe.getCurrentCoordinate());
+        IDirectionalMovementStrategy strategy = factory.getDirectionalMovementStrategy(probe.getCurrentDirection());
+        Coordinate coordinate = strategy.getBackwardCoordinate(probe.getCurrentCoordinate());
         if (Validator.validCoordinate(probeEnvironment.getGrid(), coordinate)
         && Validator.notAnObstacle(probeEnvironment.getObstacles(), coordinate)){
             probe.setCurrentCoordinate(coordinate);

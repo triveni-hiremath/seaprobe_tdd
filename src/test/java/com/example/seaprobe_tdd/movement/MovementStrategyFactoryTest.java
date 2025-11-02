@@ -14,16 +14,16 @@ import static org.junit.jupiter.api.Assertions.*;
 class MovementStrategyFactoryTest {
 
     @Autowired
-    private MovementStrategyFactory movementStrategyFactory;
+    private DirectionalMovementStrategyFactory movementStrategyFactory;
 
     @Autowired
-    private List<IMovementStrategy> movementStrategies;
+    private List<IDirectionalMovementStrategy> movementStrategies;
 
     @Test
     void getMovementStrategy() {
         Arrays.stream(DirectionEnum.values()).forEach( directionEnum -> {
-                    IMovementStrategy strategy = movementStrategyFactory.getMovementStrategy(directionEnum);
-                    assertEquals(directionEnum, strategy.direction());
+                    IDirectionalMovementStrategy strategy = movementStrategyFactory.getDirectionalMovementStrategy(directionEnum);
+                    assertEquals(directionEnum, strategy.directionEnum());
                 });
     }
 

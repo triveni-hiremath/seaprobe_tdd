@@ -5,19 +5,19 @@ import com.example.seaprobe_tdd.enums.DirectionEnum;
 import org.springframework.stereotype.Component;
 
 @Component
-public class EastMovementStrategy implements IMovementStrategy {
+public class EastMovementStrategy implements IDirectionalMovementStrategy {
     @Override
-    public DirectionEnum direction() {
+    public DirectionEnum directionEnum() {
         return DirectionEnum.E;
     }
 
     @Override
-    public Coordinate moveForward(Coordinate input) {
+    public Coordinate getForwardCoordinate(Coordinate input) {
         return new Coordinate(input.x() + 1, input.y());
     }
 
     @Override
-    public Coordinate moveBackward(Coordinate input) {
+    public Coordinate getBackwardCoordinate(Coordinate input) {
         return new Coordinate(input.x() - 1, input.y());
     }
 }

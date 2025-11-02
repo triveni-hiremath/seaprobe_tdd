@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class TurnRightCommand implements ICommand {
     @Override
-    public CommandEnum command() {
+    public CommandEnum commandEnum() {
         return CommandEnum.TURN_RIGHT;
     }
 

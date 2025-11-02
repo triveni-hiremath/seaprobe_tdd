@@ -18,7 +18,7 @@ class MoveBackwardCommandTest {
 
     @Test
     void command() {
-        assertEquals(CommandEnum.MOVE_BACKWARD, moveBackwardCommand.command());
+        assertEquals(CommandEnum.MOVE_BACKWARD, moveBackwardCommand.commandEnum());
     }
 
     @Test

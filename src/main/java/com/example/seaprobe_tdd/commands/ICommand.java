@@ -4,7 +4,7 @@ import com.example.seaprobe_tdd.dto.ProbeRequest;
 import com.example.seaprobe_tdd.enums.CommandEnum;
 
 public interface ICommand {
-    CommandEnum command();
+    CommandEnum commandEnum();
     void execute(ProbeRequest probeEnvironment);
 
 }
