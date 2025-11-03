@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Set;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class Utils {
 
     private static final ObjectMapper objectMapper = new ObjectMapper();
@@ -44,5 +46,14 @@ public class Utils {
         output.setCurrentDirection(input.getCurrentDirection());
         output.setCurrentCoordinate(input.getCurrentCoordinate());
         return output;
+    }
+
+    public static void compareProbes(Probe expected, Probe actual) {
+        assertEquals(expected.getCurrentDirection(), actual.getCurrentDirection());
+        assertEquals(expected.getCurrentCoordinate(), actual.getCurrentCoordinate());
+        assertEquals(expected.getNavigationHistory().size(), actual.getNavigationHistory().size());
+        for (int i = 0; i < expected.getNavigationHistory().size(); i++) {
+            assertEquals(expected.getNavigationHistory().get(i), actual.getNavigationHistory().get(i));
+        }
     }
 }

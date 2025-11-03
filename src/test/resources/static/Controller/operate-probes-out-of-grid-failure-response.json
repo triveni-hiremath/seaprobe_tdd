@@ -1,0 +1,4 @@
+{
+  "status": "400",
+  "message": "Invalid Request, Probe cannot be outside of the grid"
+}

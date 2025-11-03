@@ -16,9 +16,4 @@ public class Probe {
 
     private List<Coordinate> navigationHistory = new ArrayList<>();
 
-    public void setCurrentCoordinate(Coordinate currentCoordinate){
-        this.currentCoordinate = currentCoordinate;
-        this.navigationHistory.add(currentCoordinate);
-    }
-
 }

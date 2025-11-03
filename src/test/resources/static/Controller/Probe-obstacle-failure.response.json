@@ -1,0 +1,4 @@
+{
+  "message": "Invalid Request, Probe cannot be on obstacle",
+  "status": "400"
+}

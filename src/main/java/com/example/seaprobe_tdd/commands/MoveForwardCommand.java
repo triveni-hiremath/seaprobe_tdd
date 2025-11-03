@@ -30,6 +30,7 @@ public class MoveForwardCommand implements ICommand {
         if (Validator.validCoordinate(probeEnvironment.getGrid(), coordinate)
         && Validator.notAnObstacle(probeEnvironment.getObstacles(), coordinate)){
             probe.setCurrentCoordinate(coordinate);
+            probe.getNavigationHistory().add(coordinate);
         }
     }
 }
